@@ -1,15 +1,13 @@
 // navigation.js
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const nav = document.createElement("nav");
 
   nav.className = "main-nav";
 
   nav.innerHTML = `
     <div class="nav-container">
-      <div class="nav-logo">
-        <a href="index.html">Vijay Jairam</a>
-      </div>
+      <a class="nav-brand" href="index.html">Vijay Jairam</a>
 
       <div class="nav-links">
         <a href="index.html">About Me</a>
@@ -20,5 +18,5 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
 
-  document.body.insertBefore(nav, document.body.firstChild);
+  document.body.prepend(nav);
 });
