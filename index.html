@@ -1,83 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Vijay Jairam | About Me</title>
 
   <style>
-    body {
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    header {
-      background-color: #1f3a5f;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #111111;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+
+    .main-nav {
+      background-color: #050505;
+      border-bottom: 1px solid #333333;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+    }
+
+    .nav-logo a {
       color: white;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      color: #dddddd;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* Header */
+
+    header {
       text-align: center;
-      padding: 40px 20px;
+      padding: 100px 20px 70px;
+      background-color: #181818;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 40px;
+      font-size: 50px;
+      margin-bottom: 10px;
     }
 
     header p {
-      margin-top: 10px;
-      font-size: 18px;
+      font-size: 20px;
+      color: #bbbbbb;
     }
 
+    /* Main Content */
+
     main {
-      max-width: 850px;
-      margin: 50px auto;
-      background-color: white;
-      padding: 40px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 25px;
+    }
+
+    .content-card {
+      background-color: #1c1c1c;
+      border: 1px solid #333333;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin-bottom: 30px;
     }
 
     h2 {
-      color: #1f3a5f;
-      font-size: 28px;
+      font-size: 30px;
       margin-bottom: 20px;
+      color: #ffffff;
     }
 
-    .about-text {
+    p {
       font-size: 18px;
-      line-height: 1.7;
+      color: #cccccc;
     }
+
+    /* Hobbies */
+
+    .hobbies {
+      margin-top: 35px;
+    }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .hobby {
+      background-color: #272727;
+      border: 1px solid #3d3d3d;
+      padding: 18px;
+      text-align: center;
+      border-radius: 8px;
+      color: #eeeeee;
+    }
+
+    /* Footer */
 
     footer {
+      margin-top: 60px;
+      padding: 25px;
       text-align: center;
-      padding: 20px;
-      background-color: #1f3a5f;
-      color: white;
-      margin-top: 50px;
+      background-color: #050505;
+      border-top: 1px solid #333333;
     }
+
+    footer p {
+      font-size: 14px;
+      color: #888888;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      header h1 {
+        font-size: 38px;
+      }
+
+      .hobby-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
+
+  <script src="navigation.js" defer></script>
+
 </head>
 
 <body>
 
   <header>
+
     <h1>Vijay Jairam</h1>
-    <p>Marketing Student | Sales Professional | Iowa State University</p>
+
+    <p>
+      Marketing Student | Sales Professional | Iowa State University
+    </p>
+
   </header>
 
-  <main>
-    <h2>About Me</h2>
 
-    <p class="about-text">
-      My name is Vijay Jairam, and I am a senior at Iowa State University majoring in Marketing and pursuing a Professional Sales Certificate. I have gained valuable professional experience through my internship with Comparion Insurance, where I have developed my sales, communication, and customer relationship skills in a real-world environment. My internship has also allowed me to learn more about the insurance industry and understand the importance of identifying customer needs and building trust with clients. Along with my internship experience, my coursework at Iowa State has helped me strengthen my skills in marketing, teamwork, leadership, and problem-solving. After graduation, I am excited to continue growing professionally and begin my career in sales and marketing.
-    </p>
+  <main>
+
+    <section class="content-card">
+
+      <h2>About Me</h2>
+
+      <p>
+        My name is Vijay Jairam, and I am a senior at Iowa State
+        University majoring in Marketing and pursuing a Professional
+        Sales Certificate. I have gained valuable professional experience
+        through my internship with Comparion Insurance, where I have
+        developed my sales, communication, and customer relationship
+        skills in a real-world environment. My internship has also allowed
+        me to learn more about the insurance industry and understand the
+        importance of identifying customer needs and building trust with
+        clients. Along with my internship experience, my coursework at
+        Iowa State has helped me strengthen my skills in marketing,
+        teamwork, leadership, and problem-solving. After graduation, I am
+        excited to continue growing professionally and begin my career in
+        sales and marketing.
+      </p>
+
+
+      <div class="hobbies">
+
+        <h2>My Hobbies</h2>
+
+        <div class="hobby-grid">
+
+          <div class="hobby">
+            Motorcycles
+          </div>
+
+          <div class="hobby">
+            Fishing
+          </div>
+
+          <div class="hobby">
+            Cars
+          </div>
+
+          <div class="hobby">
+            Spending Time Outdoors
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+
   <footer>
-    <p>© 2026 Vijay Jairam</p>
+
+    <p>
+      © 2026 Vijay Jairam
+    </p>
+
   </footer>
 
 </body>
+
 </html>
