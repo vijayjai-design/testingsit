@@ -3,16 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Vijay Jairam | About Me</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -21,32 +16,32 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #111111;
-      color: #ffffff;
+      background-color: #121212;
+      color: white;
       line-height: 1.6;
     }
 
-    /* Navigation */
+    /* Navigation Bar */
 
     .main-nav {
+      width: 100%;
       background-color: #050505;
-      border-bottom: 1px solid #333333;
+      border-bottom: 1px solid #333;
       position: sticky;
       top: 0;
-      width: 100%;
       z-index: 1000;
     }
 
     .nav-container {
       max-width: 1100px;
       margin: auto;
+      padding: 18px 25px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 20px 30px;
+      justify-content: space-between;
     }
 
-    .nav-logo a {
+    .nav-brand {
       color: white;
       text-decoration: none;
       font-size: 22px;
@@ -59,10 +54,10 @@
     }
 
     .nav-links a {
-      color: #dddddd;
+      color: #cccccc;
       text-decoration: none;
       font-size: 16px;
-      transition: 0.3s;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
@@ -72,9 +67,10 @@
     /* Header */
 
     header {
+      background-color: #1b1b1b;
       text-align: center;
-      padding: 100px 20px 70px;
-      background-color: #181818;
+      padding: 90px 20px;
+      border-bottom: 1px solid #2f2f2f;
     }
 
     header h1 {
@@ -83,22 +79,22 @@
     }
 
     header p {
-      font-size: 20px;
-      color: #bbbbbb;
+      color: #bcbcbc;
+      font-size: 19px;
     }
 
-    /* Main Content */
+    /* Main Page */
 
     main {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 50px auto;
       padding: 0 25px;
     }
 
-    .content-card {
+    .card {
       background-color: #1c1c1c;
-      border: 1px solid #333333;
-      border-radius: 10px;
+      border: 1px solid #333;
+      border-radius: 12px;
       padding: 40px;
       margin-bottom: 30px;
     }
@@ -106,18 +102,17 @@
     h2 {
       font-size: 30px;
       margin-bottom: 20px;
-      color: #ffffff;
     }
 
-    p {
+    .about-text {
       font-size: 18px;
-      color: #cccccc;
+      color: #d0d0d0;
     }
 
     /* Hobbies */
 
     .hobbies {
-      margin-top: 35px;
+      margin-top: 40px;
     }
 
     .hobby-grid {
@@ -129,32 +124,35 @@
 
     .hobby {
       background-color: #272727;
-      border: 1px solid #3d3d3d;
-      padding: 18px;
-      text-align: center;
+      border: 1px solid #404040;
       border-radius: 8px;
-      color: #eeeeee;
+      padding: 20px;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .hobby:hover {
+      background-color: #333333;
     }
 
     /* Footer */
 
     footer {
-      margin-top: 60px;
-      padding: 25px;
-      text-align: center;
       background-color: #050505;
-      border-top: 1px solid #333333;
+      border-top: 1px solid #333;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
     }
 
     footer p {
+      color: #888;
       font-size: 14px;
-      color: #888888;
     }
 
     /* Mobile */
 
     @media (max-width: 700px) {
-
       .nav-container {
         flex-direction: column;
         gap: 15px;
@@ -173,9 +171,7 @@
       .hobby-grid {
         grid-template-columns: 1fr;
       }
-
     }
-
   </style>
 
   <script src="navigation.js" defer></script>
@@ -185,38 +181,32 @@
 <body>
 
   <header>
-
     <h1>Vijay Jairam</h1>
 
     <p>
       Marketing Student | Sales Professional | Iowa State University
     </p>
-
   </header>
-
 
   <main>
 
-    <section class="content-card">
+    <section class="card">
 
       <h2>About Me</h2>
 
-      <p>
-        My name is Vijay Jairam, and I am a senior at Iowa State
-        University majoring in Marketing and pursuing a Professional
-        Sales Certificate. I have gained valuable professional experience
-        through my internship with Comparion Insurance, where I have
-        developed my sales, communication, and customer relationship
-        skills in a real-world environment. My internship has also allowed
-        me to learn more about the insurance industry and understand the
-        importance of identifying customer needs and building trust with
-        clients. Along with my internship experience, my coursework at
-        Iowa State has helped me strengthen my skills in marketing,
-        teamwork, leadership, and problem-solving. After graduation, I am
-        excited to continue growing professionally and begin my career in
-        sales and marketing.
+      <p class="about-text">
+        My name is Vijay Jairam, and I am a senior at Iowa State University
+        majoring in Marketing and pursuing a Professional Sales Certificate.
+        I have gained valuable professional experience through my internship
+        with Comparion Insurance, where I have developed my sales,
+        communication, and customer relationship skills in a real-world
+        environment. My internship has helped me better understand how to
+        identify customer needs, communicate solutions, and build trust with
+        clients. My coursework and professional experiences have also helped
+        me strengthen my skills in marketing, teamwork, leadership, and
+        problem-solving. I am excited to continue developing these skills as
+        I begin my professional career.
       </p>
-
 
       <div class="hobbies">
 
@@ -225,19 +215,19 @@
         <div class="hobby-grid">
 
           <div class="hobby">
-            Motorcycles
+            🏍️ Motorcycles
           </div>
 
           <div class="hobby">
-            Fishing
+            🎣 Fishing
           </div>
 
           <div class="hobby">
-            Cars
+            🚗 Cars
           </div>
 
           <div class="hobby">
-            Spending Time Outdoors
+            🌲 Spending Time Outdoors
           </div>
 
         </div>
@@ -248,13 +238,8 @@
 
   </main>
 
-
   <footer>
-
-    <p>
-      © 2026 Vijay Jairam
-    </p>
-
+    <p>© 2026 Vijay Jairam</p>
   </footer>
 
 </body>
