@@ -1,132 +1,153 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const navigation = document.getElementById("navigation");
+    /*
+    ========================================
+    PRIMARY TOP NAVIGATION
+    ========================================
+    */
 
-    navigation.innerHTML = `
-        <nav class="nav-container">
+    const topNavigation =
+        document.getElementById("top-navigation");
 
-            <a href="#about" class="nav-name">
-                Vijay Jairam
-            </a>
 
-            <div class="nav-links">
+    if (topNavigation) {
 
-                <a href="#about" data-section="about">
+        topNavigation.innerHTML = `
+
+            <nav class="primary-navigation">
+
+                <a href="index.html">
                     About Me
                 </a>
 
-                <a href="#personal" data-section="personal">
+                <a href="personal.html">
                     Personal
                 </a>
 
-                <a href="#education" data-section="education">
+                <a href="education.html">
                     Education
                 </a>
 
-                <a href="#experience" data-section="experience">
+                <a href="experience.html">
                     Experience
                 </a>
 
-            </div>
+            </nav>
 
-        </nav>
-    `;
+            <nav class="secondary-navigation">
 
+                <a href="hobbies.html">
+                    Hobbies
+                </a>
 
-    /*
-    ----------------------------------------
-    SMOOTH NAVIGATION
-    ----------------------------------------
-    */
+                <a href="contact.html">
+                    Contact
+                </a>
 
-    const navLinks = document.querySelectorAll(
-        ".nav-links a, .nav-name"
-    );
+            </nav>
 
-    navLinks.forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            const targetID = link.getAttribute("href");
-
-            if (targetID.startsWith("#")) {
-
-                event.preventDefault();
-
-                const targetSection =
-                    document.querySelector(targetID);
-
-                if (targetSection) {
-
-                    targetSection.scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-                }
-
-            }
-
-        });
-
-    });
-
-
-    /*
-    ----------------------------------------
-    ACTIVE NAVIGATION LINK
-    ----------------------------------------
-    */
-
-    const sections = document.querySelectorAll(
-        "#about, #personal, #education, #experience"
-    );
-
-    const menuLinks = document.querySelectorAll(
-        ".nav-links a"
-    );
-
-
-    function updateActiveNavigation() {
-
-        let currentSection = "about";
-
-        sections.forEach(function (section) {
-
-            const sectionTop =
-                section.offsetTop - 150;
-
-            if (window.scrollY >= sectionTop) {
-
-                currentSection = section.id;
-
-            }
-
-        });
-
-
-        menuLinks.forEach(function (link) {
-
-            link.classList.remove("active");
-
-            if (
-                link.dataset.section === currentSection
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
+        `;
 
     }
 
 
-    window.addEventListener(
-        "scroll",
-        updateActiveNavigation
-    );
+
+    /*
+    ========================================
+    LEFT SIDE NAVIGATION
+    ========================================
+    */
+
+    const sideNavigation =
+        document.getElementById("side-navigation");
 
 
-    updateActiveNavigation();
+    if (sideNavigation) {
+
+        sideNavigation.innerHTML = `
+
+            <nav class="side-navigation">
+
+                <a href="index.html">
+                    About Me
+                </a>
+
+                <a href="personal.html">
+                    Personal
+                </a>
+
+                <a href="education.html">
+                    Education
+                </a>
+
+                <a href="experience.html">
+                    Experience
+                </a>
+
+                <a href="hobbies.html">
+                    Hobbies
+                </a>
+
+            </nav>
+
+        `;
+
+    }
+
+
+
+    /*
+    ========================================
+    SHOW CURRENT PAGE
+    ========================================
+    */
+
+    let currentPage =
+        window.location.pathname.split("/").pop();
+
+
+    /*
+    GitHub Pages may return nothing
+    when index.html is opened.
+    */
+
+    if (
+        currentPage === "" ||
+        currentPage === "/"
+    ) {
+
+        currentPage = "index.html";
+
+    }
+
+
+
+    /*
+    Find every navigation link
+    */
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".primary-navigation a, .side-navigation a"
+        );
+
+
+    navigationLinks.forEach(function (link) {
+
+        const linkPage =
+            link.getAttribute("href");
+
+
+        /*
+        Highlight current page
+        */
+
+        if (linkPage === currentPage) {
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 });
