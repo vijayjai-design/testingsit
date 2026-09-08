@@ -1,21 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* ==============================
+       TOP PRIMARY NAVIGATION
+    ============================== */
 
-    /*
-    =======================================
-    PRIMARY NAVIGATION — TOP
-    =======================================
-    */
+    const primaryNavigation =
+        document.getElementById("primary-navigation");
 
-    const primaryNav =
-        document.getElementById("primary-nav");
+    if (primaryNavigation) {
 
-
-    if (primaryNav) {
-
-        primaryNav.innerHTML = `
-
-            <nav class="top-primary-nav">
+        primaryNavigation.innerHTML = `
+            <nav class="primary-nav">
 
                 <a href="index.html">
                     About Me
@@ -34,28 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
-
         `;
-
     }
 
 
+    /* ==============================
+       TOP SECONDARY NAVIGATION
+    ============================== */
 
-    /*
-    =======================================
-    SECONDARY NAVIGATION — TOP
-    =======================================
-    */
+    const secondaryNavigation =
+        document.getElementById("secondary-navigation");
 
-    const secondaryNav =
-        document.getElementById("secondary-nav");
+    if (secondaryNavigation) {
 
-
-    if (secondaryNav) {
-
-        secondaryNav.innerHTML = `
-
-            <nav class="top-secondary-nav">
+        secondaryNavigation.innerHTML = `
+            <nav class="secondary-nav">
 
                 <a href="hobbies.html">
                     Hobbies
@@ -66,27 +54,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
-
         `;
-
     }
 
 
-
-    /*
-    =======================================
-    PRIMARY NAVIGATION — LEFT
-    =======================================
-    */
+    /* ==============================
+       LEFT PRIMARY NAVIGATION
+    ============================== */
 
     const leftPrimary =
-        document.getElementById("left-primary-nav");
-
+        document.getElementById(
+            "left-primary-navigation"
+        );
 
     if (leftPrimary) {
 
         leftPrimary.innerHTML = `
-
             <nav class="left-nav">
 
                 <a href="index.html">
@@ -106,29 +89,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
-
         `;
-
     }
 
 
-
-    /*
-    =======================================
-    SECONDARY NAVIGATION — LEFT
-    =======================================
-    */
+    /* ==============================
+       LEFT SECONDARY NAVIGATION
+    ============================== */
 
     const leftSecondary =
         document.getElementById(
-            "left-secondary-nav"
+            "left-secondary-navigation"
         );
-
 
     if (leftSecondary) {
 
         leftSecondary.innerHTML = `
-
             <nav class="left-nav">
 
                 <a href="hobbies.html">
@@ -140,60 +116,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
-
         `;
-
     }
 
 
-
-    /*
-    =======================================
-    HIGHLIGHT CURRENT PAGE
-    =======================================
-    */
+    /* ==============================
+       CURRENT PAGE
+    ============================== */
 
     let currentPage =
         window.location.pathname
             .split("/")
             .pop();
 
-
-    if (currentPage === "") {
-
+    if (!currentPage) {
         currentPage = "index.html";
-
     }
 
 
-    const allNavigationLinks =
+    const links =
         document.querySelectorAll(
-
-            ".top-primary-nav a, " +
-            ".top-secondary-nav a, " +
+            ".primary-nav a, " +
+            ".secondary-nav a, " +
             ".left-nav a"
-
         );
 
 
-    allNavigationLinks.forEach(
-        function (link) {
+    links.forEach(function (link) {
 
+        const page =
+            link
+                .getAttribute("href")
+                .split("/")
+                .pop();
 
-            const linkPage =
-                link
-                    .getAttribute("href")
-                    .split("/")
-                    .pop();
-
-
-            if (linkPage === currentPage) {
-
-                link.classList.add("active");
-
-            }
-
+        if (page === currentPage) {
+            link.classList.add("active");
         }
-    );
+
+    });
 
 });
