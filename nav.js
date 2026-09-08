@@ -1,64 +1,132 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const nav = document.createElement("nav");
 
-  nav.className = "main-nav";
+    const navigation = document.getElementById("navigation");
 
-  nav.innerHTML = `
-    <div class="nav-container">
+    navigation.innerHTML = `
+        <nav class="nav-container">
 
-      <a href="index.html" class="nav-link">
-        About Me
-      </a>
+            <a href="#about" class="nav-name">
+                Vijay Jairam
+            </a>
 
-      <a href="personal.html" class="nav-link">
-        Personal
-      </a>
+            <div class="nav-links">
 
-      <a href="education.html" class="nav-link">
-        Education
-      </a>
+                <a href="#about" data-section="about">
+                    About Me
+                </a>
 
-      <a href="experience.html" class="nav-link">
-        Experience
-      </a>
+                <a href="#personal" data-section="personal">
+                    Personal
+                </a>
 
-    </div>
-  `;
+                <a href="#education" data-section="education">
+                    Education
+                </a>
 
-  nav.style.width = "100%";
-  nav.style.backgroundColor = "#1a1a1a";
-  nav.style.borderBottom = "1px solid #444";
-  nav.style.position = "sticky";
-  nav.style.top = "0";
-  nav.style.zIndex = "1000";
+                <a href="#experience" data-section="experience">
+                    Experience
+                </a>
 
-  const navContainer = nav.querySelector(".nav-container");
+            </div>
 
-  navContainer.style.display = "flex";
-  navContainer.style.alignItems = "center";
-  navContainer.style.justifyContent = "flex-start";
-  navContainer.style.gap = "30px";
-  navContainer.style.padding = "18px 30px";
+        </nav>
+    `;
 
-  const links = nav.querySelectorAll(".nav-link");
 
-  links.forEach(function (link) {
-    link.style.color = "white";
-    link.style.textDecoration = "none";
-    link.style.fontFamily = "Arial, sans-serif";
-    link.style.fontSize = "16px";
-    link.style.fontWeight = "bold";
-    link.style.transition = "color 0.2s ease";
+    /*
+    ----------------------------------------
+    SMOOTH NAVIGATION
+    ----------------------------------------
+    */
 
-    link.addEventListener("mouseenter", function () {
-      link.style.color = "#aaaaaa";
+    const navLinks = document.querySelectorAll(
+        ".nav-links a, .nav-name"
+    );
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetID = link.getAttribute("href");
+
+            if (targetID.startsWith("#")) {
+
+                event.preventDefault();
+
+                const targetSection =
+                    document.querySelector(targetID);
+
+                if (targetSection) {
+
+                    targetSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            }
+
+        });
+
     });
 
-    link.addEventListener("mouseleave", function () {
-      link.style.color = "white";
-    });
-  });
 
-  // Put the navigation at the TOP of the page
-  document.body.prepend(nav);
+    /*
+    ----------------------------------------
+    ACTIVE NAVIGATION LINK
+    ----------------------------------------
+    */
+
+    const sections = document.querySelectorAll(
+        "#about, #personal, #education, #experience"
+    );
+
+    const menuLinks = document.querySelectorAll(
+        ".nav-links a"
+    );
+
+
+    function updateActiveNavigation() {
+
+        let currentSection = "about";
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            if (window.scrollY >= sectionTop) {
+
+                currentSection = section.id;
+
+            }
+
+        });
+
+
+        menuLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            if (
+                link.dataset.section === currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation
+    );
+
+
+    updateActiveNavigation();
+
 });
