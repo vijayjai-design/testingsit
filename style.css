@@ -1,6 +1,6 @@
-/* ========================================
-   GLOBAL SETTINGS
-======================================== */
+/* =====================================
+   RESET
+===================================== */
 
 * {
     margin: 0;
@@ -8,183 +8,165 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+
+/* =====================================
+   BODY / NARDO GREY BACKGROUND
+===================================== */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
 
-    /* Nardo Grey outer background */
-    background-color: #6d7073;
+    background-color: #6f7275;
 
     color: #111111;
 }
 
 
-/* ========================================
-   MAIN WEBSITE CONTAINER
-
-   80% width = 10% background on
-   left + 10% background on right
-======================================== */
+/* =====================================
+   80% WEBSITE
+   10% NARDO GREY EACH SIDE
+===================================== */
 
 .site-wrapper {
-    width: 80vw;
+    width: 80%;
+
+    margin: 0 auto;
+
     min-height: 100vh;
 
-    margin-left: auto;
-    margin-right: auto;
-
-    background-color: #f5f5f5;
+    background-color: white;
 
     border-left: 2px solid #222222;
     border-right: 2px solid #222222;
 }
 
 
-/* ========================================
+/* =====================================
    HEADER
-======================================== */
+===================================== */
 
 .site-header {
     display: grid;
 
     grid-template-columns: 20% 80%;
 
-    border-bottom: 2px solid #222222;
+    min-height: 110px;
 
-    background-color: #ffffff;
+    background-color: white;
+
+    border-bottom: 2px solid #222222;
 }
 
 
-/* LOGO AREA */
+/* LOGO */
 
 .logo-area {
-    min-height: 110px;
-
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    border-right: 2px solid #222222;
+    font-size: 36px;
 
-    font-size: 32px;
+    font-weight: bold;
+
+    border-right: 2px solid #222222;
+}
+
+
+/* HEADER INFORMATION */
+
+.header-info {
+    display: flex;
+
+    align-items: center;
+
+    padding: 25px;
+
+    font-size: 17px;
+
     font-weight: bold;
 }
 
 
-/* TOP INFORMATION / TITLE AREA */
-
-.header-info {
-    min-height: 70px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 20px;
-
-    font-size: 15px;
-}
-
-
-/* ========================================
-   TOP NAVIGATION
-======================================== */
+/* =====================================
+   TOP NAVIGATION BAR
+===================================== */
 
 #top-navigation {
-    grid-column: 2;
-
-    border-top: 2px solid #222222;
+    width: 100%;
 }
 
 
-/* PRIMARY NAV */
+/* THIS IS THE VISIBLE BLACK BAR */
 
 .primary-navigation {
     width: 100%;
 
+    min-height: 55px;
+
     display: flex;
+
+    justify-content: center;
+    align-items: stretch;
+
+    background-color: #111111;
+
+    border-bottom: 2px solid #222222;
+}
+
+
+/* NAV LINKS */
+
+.primary-navigation a {
+    display: flex;
+
     justify-content: center;
     align-items: center;
 
-    background-color: #111111;
-}
+    padding: 0 35px;
 
+    min-height: 55px;
 
-.primary-navigation a {
-    display: block;
-
-    padding: 14px 25px;
-
-    color: #ffffff;
+    color: white;
 
     text-decoration: none;
 
-    font-size: 15px;
+    font-size: 16px;
+
     font-weight: bold;
 
-    transition: background-color 0.2s ease,
-                color 0.2s ease;
+    border-left: 1px solid #333333;
+
+    transition: 0.2s;
 }
 
 
+.primary-navigation a:last-child {
+    border-right: 1px solid #333333;
+}
+
+
+/* HOVER */
+
 .primary-navigation a:hover {
-    background-color: #6d7073;
-    color: #ffffff;
+    background-color: #6f7275;
 }
 
 
 /* CURRENT PAGE */
 
 .primary-navigation a.active {
-    background-color: #6d7073;
+    background-color: #55595c;
 }
 
 
-/* ========================================
-   SECONDARY NAVIGATION
-======================================== */
-
-.secondary-navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #333333;
-
-    border-top: 1px solid #555555;
-}
-
-
-.secondary-navigation a {
-    color: #eeeeee;
-
-    text-decoration: none;
-
-    padding: 8px 18px;
-
-    font-size: 13px;
-}
-
-
-.secondary-navigation a:hover {
-    background-color: #555555;
-}
-
-
-/* ========================================
-   MAIN WEBSITE GRID
-======================================== */
+/* =====================================
+   MAIN PAGE LAYOUT
+===================================== */
 
 .page-layout {
     display: grid;
-
-    /*
-        Left Navigation = 20%
-        Main Content = 60%
-        Right Sidebar = 20%
-    */
 
     grid-template-columns: 20% 60% 20%;
 
@@ -192,9 +174,9 @@ body {
 }
 
 
-/* ========================================
-   LEFT NAVIGATION
-======================================== */
+/* =====================================
+   LEFT SIDEBAR
+===================================== */
 
 .left-sidebar {
     background-color: #eeeeee;
@@ -206,63 +188,59 @@ body {
 
 
 .left-sidebar h3 {
-    margin-bottom: 15px;
-
-    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 
-#side-navigation {
+/* SIDE NAVIGATION */
+
+.side-navigation {
     display: flex;
+
     flex-direction: column;
 }
 
 
 .side-navigation a {
-    padding: 12px 10px;
+    padding: 12px;
 
-    color: #222222;
+    color: #111111;
 
     text-decoration: none;
 
-    border-bottom: 1px solid #cccccc;
-
     font-weight: bold;
+
+    border-bottom: 1px solid #cccccc;
 }
 
 
 .side-navigation a:hover {
-    background-color: #d5d5d5;
+    background-color: #cccccc;
 }
 
 
 .side-navigation a.active {
-    background-color: #6d7073;
-    color: #ffffff;
+    background-color: #6f7275;
+
+    color: white;
 }
 
 
-/* ========================================
-   MAIN CONTENT AREA
-======================================== */
+/* =====================================
+   MAIN CONTENT
+===================================== */
 
 .main-content {
-    background-color: #ffffff;
-
     padding: 30px;
+
+    background-color: white;
 }
 
 
 .main-content h1 {
     font-size: 36px;
 
-    margin-bottom: 20px;
-}
-
-
-.main-content h2 {
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 
@@ -271,40 +249,39 @@ body {
 
     line-height: 1.7;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 
-/* ========================================
-   HERO IMAGE
-======================================== */
+/* =====================================
+   HERO
+===================================== */
 
 .hero-image {
     width: 100%;
 
-    height: 250px;
+    height: 240px;
 
     margin-bottom: 30px;
 
-    overflow: hidden;
+    background-color: #dddddd;
 
     border: 2px solid #222222;
 
-    background-color: #dddddd;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+
+    color: #555555;
 }
 
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-/* ========================================
+/* =====================================
    RIGHT SIDEBAR
-======================================== */
+===================================== */
 
 .right-sidebar {
     background-color: #eeeeee;
@@ -328,7 +305,7 @@ body {
 
 
 .right-sidebar ul {
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 
@@ -337,121 +314,70 @@ body {
 }
 
 
-/* ========================================
+/* =====================================
    FOOTER
-======================================== */
+===================================== */
 
 .site-footer {
-    width: 100%;
-
-    border-top: 2px solid #222222;
-
     background-color: #111111;
 
-    color: #ffffff;
-
-    padding: 25px;
+    color: white;
 
     text-align: center;
 
-    font-size: 14px;
+    padding: 25px;
+
+    border-top: 2px solid #222222;
 }
 
 
-.site-footer a {
-    color: #dddddd;
-
-    text-decoration: none;
-}
-
-
-.site-footer a:hover {
-    color: #ffffff;
-}
-
-
-/* ========================================
-   TABLETS
-======================================== */
-
-@media screen and (max-width: 1000px) {
-
-    .site-wrapper {
-        width: 90vw;
-    }
-
-    .page-layout {
-        grid-template-columns: 25% 75%;
-    }
-
-    .right-sidebar {
-        display: none;
-    }
-}
-
-
-/* ========================================
+/* =====================================
    MOBILE
-======================================== */
+===================================== */
 
-@media screen and (max-width: 700px) {
-
-    body {
-        background-color: #6d7073;
-    }
+@media screen and (max-width: 800px) {
 
     .site-wrapper {
-        width: 95vw;
+        width: 95%;
     }
 
-
-    /* HEADER */
 
     .site-header {
-        display: block;
+        grid-template-columns: 1fr;
     }
+
 
     .logo-area {
         border-right: none;
 
         border-bottom: 2px solid #222222;
 
-        min-height: 80px;
+        padding: 20px;
     }
 
-
-    /* TOP NAVIGATION */
-
-    #top-navigation {
-        width: 100%;
-    }
 
     .primary-navigation {
         flex-direction: column;
     }
 
+
     .primary-navigation a {
         width: 100%;
 
-        text-align: center;
+        border-left: none;
+
+        border-right: none;
 
         border-bottom: 1px solid #333333;
+
+        padding: 15px;
     }
 
-
-    .secondary-navigation {
-        flex-direction: column;
-    }
-
-
-    /* PAGE */
 
     .page-layout {
-        display: block;
+        grid-template-columns: 1fr;
     }
 
-
-    /* LEFT SIDEBAR */
 
     .left-sidebar {
         border-right: none;
@@ -460,25 +386,7 @@ body {
     }
 
 
-    .side-navigation {
-        flex-direction: row;
-
-        flex-wrap: wrap;
-    }
-
-
-    /* CONTENT */
-
-    .main-content {
-        padding: 20px;
-    }
-
-
-    /* RIGHT SIDEBAR */
-
     .right-sidebar {
-        display: block;
-
         border-left: none;
 
         border-top: 2px solid #222222;
