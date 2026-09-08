@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ==============================
-       TOP PRIMARY NAVIGATION
-    ============================== */
+    // ==========================================
+    // PRIMARY NAVIGATION
+    // ==========================================
 
     const primaryNavigation =
         document.getElementById("primary-navigation");
@@ -30,12 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </nav>
         `;
+
     }
 
 
-    /* ==============================
-       TOP SECONDARY NAVIGATION
-    ============================== */
+    // ==========================================
+    // SECONDARY NAVIGATION
+    // ==========================================
 
     const secondaryNavigation =
         document.getElementById("secondary-navigation");
@@ -55,102 +56,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </nav>
         `;
+
     }
 
 
-    /* ==============================
-       LEFT PRIMARY NAVIGATION
-    ============================== */
-
-    const leftPrimary =
-        document.getElementById(
-            "left-primary-navigation"
-        );
-
-    if (leftPrimary) {
-
-        leftPrimary.innerHTML = `
-            <nav class="left-nav">
-
-                <a href="index.html">
-                    About Me
-                </a>
-
-                <a href="personal.html">
-                    Personal
-                </a>
-
-                <a href="education.html">
-                    Education
-                </a>
-
-                <a href="experience.html">
-                    Experience
-                </a>
-
-            </nav>
-        `;
-    }
-
-
-    /* ==============================
-       LEFT SECONDARY NAVIGATION
-    ============================== */
-
-    const leftSecondary =
-        document.getElementById(
-            "left-secondary-navigation"
-        );
-
-    if (leftSecondary) {
-
-        leftSecondary.innerHTML = `
-            <nav class="left-nav">
-
-                <a href="hobbies.html">
-                    Hobbies
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-        `;
-    }
-
-
-    /* ==============================
-       CURRENT PAGE
-    ============================== */
+    // ==========================================
+    // HIGHLIGHT CURRENT PAGE
+    // ==========================================
 
     let currentPage =
         window.location.pathname
             .split("/")
             .pop();
 
-    if (!currentPage) {
+    if (currentPage === "") {
         currentPage = "index.html";
     }
 
 
-    const links =
+    const navLinks =
         document.querySelectorAll(
-            ".primary-nav a, " +
-            ".secondary-nav a, " +
-            ".left-nav a"
+            ".primary-nav a, .secondary-nav a"
         );
 
 
-    links.forEach(function (link) {
+    navLinks.forEach(function (link) {
 
-        const page =
-            link
-                .getAttribute("href")
-                .split("/")
-                .pop();
+        const linkPage =
+            link.getAttribute("href");
 
-        if (page === currentPage) {
+        if (linkPage === currentPage) {
             link.classList.add("active");
         }
 
