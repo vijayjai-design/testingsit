@@ -1,247 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Vijay Jairam | About Me</title>
+  <title>My Website</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #121212;
+      margin: 0;
+      background-color: #111;
       color: white;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
     }
 
-    /* Navigation Bar */
-
-    .main-nav {
+    #navbar {
       width: 100%;
-      background-color: #050505;
-      border-bottom: 1px solid #333;
+      background-color: #1a1a1a;
+      border-bottom: 1px solid #444;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     .nav-container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 18px 25px;
       display: flex;
+      justify-content: flex-start;
       align-items: center;
-      justify-content: space-between;
+      gap: 30px;
+      padding: 18px 30px;
     }
 
-    .nav-brand {
+    .nav-container a {
       color: white;
       text-decoration: none;
-      font-size: 22px;
+      font-size: 16px;
       font-weight: bold;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 35px;
+    .nav-container a:hover {
+      color: #aaa;
     }
-
-    .nav-links a {
-      color: #cccccc;
-      text-decoration: none;
-      font-size: 16px;
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    /* Header */
-
-    header {
-      background-color: #1b1b1b;
-      text-align: center;
-      padding: 90px 20px;
-      border-bottom: 1px solid #2f2f2f;
-    }
-
-    header h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      color: #bcbcbc;
-      font-size: 19px;
-    }
-
-    /* Main Page */
 
     main {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 25px;
-    }
-
-    .card {
-      background-color: #1c1c1c;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 40px;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-
-    .about-text {
-      font-size: 18px;
-      color: #d0d0d0;
-    }
-
-    /* Hobbies */
-
-    .hobbies {
-      margin-top: 40px;
-    }
-
-    .hobby-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .hobby {
-      background-color: #272727;
-      border: 1px solid #404040;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      font-size: 17px;
-    }
-
-    .hobby:hover {
-      background-color: #333333;
-    }
-
-    /* Footer */
-
-    footer {
-      background-color: #050505;
-      border-top: 1px solid #333;
-      text-align: center;
-      padding: 25px;
-      margin-top: 50px;
-    }
-
-    footer p {
-      color: #888;
-      font-size: 14px;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 700px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      header h1 {
-        font-size: 38px;
-      }
-
-      .hobby-grid {
-        grid-template-columns: 1fr;
-      }
+      padding: 40px 30px;
     }
   </style>
-
-  <script src="navigation.js" defer></script>
-
 </head>
 
 <body>
 
-  <header>
-    <h1>Vijay Jairam</h1>
-
-    <p>
-      Marketing Student | Sales Professional | Iowa State University
-    </p>
-  </header>
+  <!-- NAVIGATION MUST COME FIRST -->
+  <div id="navbar"></div>
 
   <main>
+    <h1>About Me</h1>
 
-    <section class="card">
-
-      <h2>About Me</h2>
-
-      <p class="about-text">
-        My name is Vijay Jairam, and I am a senior at Iowa State University
-        majoring in Marketing and pursuing a Professional Sales Certificate.
-        I have gained valuable professional experience through my internship
-        with Comparion Insurance, where I have developed my sales,
-        communication, and customer relationship skills in a real-world
-        environment. My internship has helped me better understand how to
-        identify customer needs, communicate solutions, and build trust with
-        clients. My coursework and professional experiences have also helped
-        me strengthen my skills in marketing, teamwork, leadership, and
-        problem-solving. I am excited to continue developing these skills as
-        I begin my professional career.
-      </p>
-
-      <div class="hobbies">
-
-        <h2>My Hobbies</h2>
-
-        <div class="hobby-grid">
-
-          <div class="hobby">
-            🏍️ Motorcycles
-          </div>
-
-          <div class="hobby">
-            🎣 Fishing
-          </div>
-
-          <div class="hobby">
-            🚗 Cars
-          </div>
-
-          <div class="hobby">
-            🌲 Spending Time Outdoors
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
+    <p>
+      I am a marketing student at Iowa State University with experience in
+      sales, insurance, and customer relationships. Outside of school and work,
+      I enjoy motorcycles, fishing, spending time outdoors, and working on
+      personal projects.
+    </p>
   </main>
 
-  <footer>
-    <p>© 2026 Vijay Jairam</p>
-  </footer>
+  <script src="navigation.js"></script>
 
 </body>
-
 </html>
