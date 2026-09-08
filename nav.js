@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ==============================
-    // TOP NAVIGATION BAR
-    // ==============================
 
-    const topNav = document.getElementById("top-navigation");
+    /* =====================================
+       PRIMARY TOP NAVIGATION
+    ====================================== */
 
-    if (topNav) {
+    const primaryContainer =
+        document.getElementById(
+            "primary-navigation"
+        );
 
-        topNav.innerHTML = `
+
+    if (primaryContainer) {
+
+        primaryContainer.innerHTML = `
+
             <nav class="primary-navigation">
 
                 <a href="index.html">
@@ -28,20 +34,59 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
+
         `;
 
     }
 
 
-    // ==============================
-    // LEFT NAVIGATION
-    // ==============================
 
-    const sideNav = document.getElementById("side-navigation");
+    /* =====================================
+       SECONDARY NAVIGATION
+    ====================================== */
 
-    if (sideNav) {
+    const secondaryContainer =
+        document.getElementById(
+            "secondary-navigation"
+        );
 
-        sideNav.innerHTML = `
+
+    if (secondaryContainer) {
+
+        secondaryContainer.innerHTML = `
+
+            <nav class="secondary-navigation">
+
+                <a href="hobbies.html">
+                    Hobbies
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        `;
+
+    }
+
+
+
+    /* =====================================
+       LEFT PRIMARY NAVIGATION
+    ====================================== */
+
+    const sideNavigation =
+        document.getElementById(
+            "side-navigation"
+        );
+
+
+    if (sideNavigation) {
+
+        sideNavigation.innerHTML = `
+
             <nav class="side-navigation">
 
                 <a href="index.html">
@@ -61,36 +106,92 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
+
         `;
 
     }
 
 
-    // ==============================
-    // CURRENT PAGE HIGHLIGHT
-    // ==============================
 
-    let currentPage =
-        window.location.pathname.split("/").pop();
+    /* =====================================
+       LEFT SECONDARY NAVIGATION
+    ====================================== */
 
-    if (currentPage === "") {
-        currentPage = "index.html";
+    const sideSecondary =
+        document.getElementById(
+            "side-secondary-navigation"
+        );
+
+
+    if (sideSecondary) {
+
+        sideSecondary.innerHTML = `
+
+            <nav class="side-navigation">
+
+                <a href="hobbies.html">
+                    Hobbies
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        `;
+
     }
 
 
-    const links = document.querySelectorAll(
-        ".primary-navigation a, .side-navigation a"
-    );
+
+    /* =====================================
+       CURRENT PAGE HIGHLIGHT
+    ====================================== */
+
+    let currentPage =
+        window.location.pathname
+            .split("/")
+            .pop();
 
 
-    links.forEach(function (link) {
+    if (!currentPage) {
 
-        const linkPage = link.getAttribute("href");
+        currentPage = "index.html";
 
-        if (linkPage === currentPage) {
-            link.classList.add("active");
+    }
+
+
+    const navigationLinks =
+        document.querySelectorAll(
+
+            ".primary-navigation a, " +
+
+            ".secondary-navigation a, " +
+
+            ".side-navigation a"
+
+        );
+
+
+    navigationLinks.forEach(
+        function (link) {
+
+
+            const page =
+                link
+                    .getAttribute("href")
+                    .split("/")
+                    .pop();
+
+
+            if (page === currentPage) {
+
+                link.classList.add("active");
+
+            }
+
         }
-
-    });
+    );
 
 });
