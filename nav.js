@@ -1,93 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =====================================
-       PRIMARY TOP NAVIGATION
-    ====================================== */
+    /*
+    =======================================
+    PRIMARY NAVIGATION — TOP
+    =======================================
+    */
 
-    const primaryContainer =
-        document.getElementById(
-            "primary-navigation"
-        );
-
-
-    if (primaryContainer) {
-
-        primaryContainer.innerHTML = `
-
-            <nav class="primary-navigation">
-
-                <a href="index.html">
-                    About Me
-                </a>
-
-                <a href="personal.html">
-                    Personal
-                </a>
-
-                <a href="education.html">
-                    Education
-                </a>
-
-                <a href="experience.html">
-                    Experience
-                </a>
-
-            </nav>
-
-        `;
-
-    }
+    const primaryNav =
+        document.getElementById("primary-nav");
 
 
+    if (primaryNav) {
 
-    /* =====================================
-       SECONDARY NAVIGATION
-    ====================================== */
+        primaryNav.innerHTML = `
 
-    const secondaryContainer =
-        document.getElementById(
-            "secondary-navigation"
-        );
-
-
-    if (secondaryContainer) {
-
-        secondaryContainer.innerHTML = `
-
-            <nav class="secondary-navigation">
-
-                <a href="hobbies.html">
-                    Hobbies
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
-        `;
-
-    }
-
-
-
-    /* =====================================
-       LEFT PRIMARY NAVIGATION
-    ====================================== */
-
-    const sideNavigation =
-        document.getElementById(
-            "side-navigation"
-        );
-
-
-    if (sideNavigation) {
-
-        sideNavigation.innerHTML = `
-
-            <nav class="side-navigation">
+            <nav class="top-primary-nav">
 
                 <a href="index.html">
                     About Me
@@ -113,21 +41,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    /* =====================================
-       LEFT SECONDARY NAVIGATION
-    ====================================== */
+    /*
+    =======================================
+    SECONDARY NAVIGATION — TOP
+    =======================================
+    */
 
-    const sideSecondary =
-        document.getElementById(
-            "side-secondary-navigation"
-        );
+    const secondaryNav =
+        document.getElementById("secondary-nav");
 
 
-    if (sideSecondary) {
+    if (secondaryNav) {
 
-        sideSecondary.innerHTML = `
+        secondaryNav.innerHTML = `
 
-            <nav class="side-navigation">
+            <nav class="top-secondary-nav">
 
                 <a href="hobbies.html">
                     Hobbies
@@ -145,9 +73,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    /* =====================================
-       CURRENT PAGE HIGHLIGHT
-    ====================================== */
+    /*
+    =======================================
+    PRIMARY NAVIGATION — LEFT
+    =======================================
+    */
+
+    const leftPrimary =
+        document.getElementById("left-primary-nav");
+
+
+    if (leftPrimary) {
+
+        leftPrimary.innerHTML = `
+
+            <nav class="left-nav">
+
+                <a href="index.html">
+                    About Me
+                </a>
+
+                <a href="personal.html">
+                    Personal
+                </a>
+
+                <a href="education.html">
+                    Education
+                </a>
+
+                <a href="experience.html">
+                    Experience
+                </a>
+
+            </nav>
+
+        `;
+
+    }
+
+
+
+    /*
+    =======================================
+    SECONDARY NAVIGATION — LEFT
+    =======================================
+    */
+
+    const leftSecondary =
+        document.getElementById(
+            "left-secondary-nav"
+        );
+
+
+    if (leftSecondary) {
+
+        leftSecondary.innerHTML = `
+
+            <nav class="left-nav">
+
+                <a href="hobbies.html">
+                    Hobbies
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        `;
+
+    }
+
+
+
+    /*
+    =======================================
+    HIGHLIGHT CURRENT PAGE
+    =======================================
+    */
 
     let currentPage =
         window.location.pathname
@@ -155,37 +159,35 @@ document.addEventListener("DOMContentLoaded", function () {
             .pop();
 
 
-    if (!currentPage) {
+    if (currentPage === "") {
 
         currentPage = "index.html";
 
     }
 
 
-    const navigationLinks =
+    const allNavigationLinks =
         document.querySelectorAll(
 
-            ".primary-navigation a, " +
-
-            ".secondary-navigation a, " +
-
-            ".side-navigation a"
+            ".top-primary-nav a, " +
+            ".top-secondary-nav a, " +
+            ".left-nav a"
 
         );
 
 
-    navigationLinks.forEach(
+    allNavigationLinks.forEach(
         function (link) {
 
 
-            const page =
+            const linkPage =
                 link
                     .getAttribute("href")
                     .split("/")
                     .pop();
 
 
-            if (page === currentPage) {
+            if (linkPage === currentPage) {
 
                 link.classList.add("active");
 
