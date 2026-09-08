@@ -1,6 +1,6 @@
-/* ==========================================
+/* =========================================
    RESET
-========================================== */
+========================================= */
 
 * {
     margin: 0;
@@ -9,132 +9,100 @@
 }
 
 
-html {
-    min-height: 100%;
-}
-
-
 body {
-
-    min-height: 100vh;
 
     font-family: Arial, Helvetica, sans-serif;
 
-    /*
-       NARDO GREY BACKGROUND
-    */
+    background-color: #707478;
 
-    background-color: #707477;
+    color: #111;
 
-    color: #111111;
 }
 
 
+/* =========================================
+   WEBSITE
 
-/* ==========================================
-   MAIN 80% WEBSITE
+   10% Nardo grey on each side
+========================================= */
 
-   10% grey left
-   80% website
-   10% grey right
-========================================== */
-
-.site-container {
+.website {
 
     width: 80vw;
 
     margin: 0 auto;
 
-    background-color: #f7f7f7;
+    background-color: white;
 
-    border-left: 2px solid #222222;
+    border-left: 2px solid #222;
+    border-right: 2px solid #222;
 
-    border-right: 2px solid #222222;
 }
 
 
+/* =========================================
+   HEADER
 
-/* ==========================================
-   TOP LAYOUT
+   23% logo
+   77% right area
+========================================= */
 
-   This matches the reference:
-
-   | LOGO | INFORMATION |
-   | LOGO | PRIMARY NAV |
-   | LOGO | SECOND NAV  |
-========================================== */
-
-.top-layout {
+.header-grid {
 
     display: grid;
 
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 23% 77%;
 
     grid-template-rows:
-        84px
-        26px
-        26px;
+        70px
+        30px
+        30px;
 
     grid-template-areas:
 
-        "logo information"
-
+        "logo info"
         "logo primary"
-
         "logo secondary";
 
 }
 
 
-
-/* ==========================================
+/* =========================================
    LOGO
-========================================== */
+========================================= */
 
 .logo-box {
 
     grid-area: logo;
 
-    background-color: #f7f7f7;
-
-    border-top: 2px solid #222222;
-
-    border-bottom: 2px solid #222222;
-
-    border-right: 2px solid #222222;
-
+    border-top: 2px solid #222;
+    border-right: 2px solid #222;
+    border-bottom: 2px solid #222;
 
     display: flex;
 
     justify-content: center;
-
     align-items: center;
-
 
     font-size: 38px;
 
-    font-weight: 500;
+    background-color: white;
+
 }
 
 
+/* =========================================
+   HEADER INFORMATION
+========================================= */
 
-/* ==========================================
-   TOP INFORMATION
-========================================== */
+.header-info {
 
-.header-information {
+    grid-area: info;
 
-    grid-area: information;
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
 
-    background-color: #f7f7f7;
-
-    border-top: 2px solid #222222;
-
-    border-bottom: 2px solid #222222;
-
-
-    padding: 13px 22px;
-
+    padding: 10px 18px;
 
     display: flex;
 
@@ -142,299 +110,279 @@ body {
 
     justify-content: center;
 
-
-    font-size: 15px;
 }
 
 
-.header-information strong {
+.header-info strong {
 
-    font-size: 18px;
+    font-size: 17px;
 
-    margin-bottom: 5px;
 }
 
 
-.header-information span {
+.header-info span {
 
-    font-size: 14px;
-}
-
-
-
-/* ==========================================
-   PRIMARY NAVIGATION ROW
-========================================== */
-
-#primary-navigation {
-
-    grid-area: primary;
-
-    height: 26px;
-
-    background-color: #f7f7f7;
-
-    border-bottom: 1px solid #222222;
-}
-
-
-.primary-navigation {
-
-    width: 100%;
-
-    height: 100%;
-
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-
-.primary-navigation a {
-
-    color: #111111;
-
-    text-decoration: none;
+    margin-top: 4px;
 
     font-size: 13px;
 
-    padding: 4px 18px;
 }
 
 
-.primary-navigation a:hover {
+/* =========================================
+   TOP PRIMARY NAVIGATION
+========================================= */
 
-    background-color: #707477;
+#primary-nav {
 
-    color: white;
-}
-
-
-.primary-navigation a.active {
-
-    font-weight: bold;
-
-    text-decoration: underline;
-}
-
-
-
-/* ==========================================
-   SECONDARY NAVIGATION ROW
-========================================== */
-
-#secondary-navigation {
-
-    grid-area: secondary;
-
-    height: 26px;
-
-    background-color: #f7f7f7;
-
-    border-bottom: 2px solid #222222;
-}
-
-
-.secondary-navigation {
+    grid-area: primary;
 
     width: 100%;
 
+    height: 30px;
+
+    border-bottom: 1px solid #222;
+
+    background-color: white;
+
+}
+
+
+.top-primary-nav {
+
     height: 100%;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.top-primary-nav a {
+
+    height: 100%;
+
+    padding: 0 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #111;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    border-left: 1px solid transparent;
+
+    border-right: 1px solid transparent;
+
+}
+
+
+.top-primary-nav a:hover {
+
+    background-color: #d9d9d9;
+
+    border-left-color: #777;
+    border-right-color: #777;
+
+}
+
+
+.top-primary-nav a.active {
+
+    background-color: #707478;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   TOP SECONDARY NAVIGATION
+========================================= */
+
+#secondary-nav {
+
+    grid-area: secondary;
+
+    width: 100%;
+
+    height: 30px;
+
+    border-bottom: 2px solid #222;
+
+    background-color: white;
+
+}
+
+
+.top-secondary-nav {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.top-secondary-nav a {
+
+    height: 100%;
+
+    padding: 0 20px;
 
     display: flex;
 
     justify-content: center;
 
     align-items: center;
-}
 
-
-.secondary-navigation a {
-
-    color: #222222;
-
-    text-decoration: none;
+    color: #111;
 
     font-size: 12px;
 
-    padding: 4px 18px;
+    text-decoration: none;
+
 }
 
 
-.secondary-navigation a:hover {
+.top-secondary-nav a:hover {
 
-    text-decoration: underline;
+    background-color: #dedede;
+
 }
 
 
+.top-secondary-nav a.active {
 
-/* ==========================================
-   MAIN BODY GRID
+    background-color: #707478;
 
-   Reference layout:
+    color: white;
 
-   20% LEFT NAV
-   60% MAIN
-   20% RIGHT
-========================================== */
+}
 
-.content-layout {
+
+/* =========================================
+   MAIN PAGE
+
+   Approximately matches reference:
+   23% / 54% / 23%
+========================================= */
+
+.body-grid {
 
     display: grid;
 
     grid-template-columns:
-        20% 60% 20%;
+        23% 54% 23%;
 
-    align-items: stretch;
+    min-height: 620px;
 
-    min-height: 640px;
 }
 
 
-
-/* ==========================================
+/* =========================================
    LEFT NAVIGATION
-========================================== */
+========================================= */
 
-.left-navigation {
+.left-column {
 
-    background-color: #f3f3f3;
+    border-right: 2px solid #222;
+    border-bottom: 2px solid #222;
 
-    border-right: 2px solid #222222;
+    background-color: white;
 
-    border-bottom: 2px solid #222222;
+    padding: 35px 20px;
 
-
-    padding:
-
-        34px
-        18px;
 }
 
 
-.left-navigation h3 {
+.left-nav-title {
 
     font-size: 15px;
 
-    font-weight: normal;
+    margin-bottom: 8px;
 
-    margin-bottom: 10px;
 }
 
 
-.secondary-heading {
+.secondary-title {
 
     margin-top: 30px;
+
 }
 
 
+/* =========================================
+   LEFT NAV LINKS
+========================================= */
 
-/* ==========================================
-   SIDE NAV
-========================================== */
-
-.side-navigation {
+.left-nav {
 
     display: flex;
 
     flex-direction: column;
+
 }
 
 
-.side-navigation a {
+.left-nav a {
 
-    color: #111111;
+    color: #111;
 
     text-decoration: none;
 
     font-size: 14px;
 
-    padding: 7px 5px;
+    padding: 6px 8px;
+
 }
 
 
-.side-navigation a:hover {
+.left-nav a:hover {
 
-    background-color: #dedede;
+    background-color: #ddd;
+
 }
 
 
-.side-navigation a.active {
+.left-nav a.active {
 
     font-weight: bold;
 
-    text-decoration: underline;
+    background-color: #707478;
+
+    color: white;
+
 }
 
 
-
-/* ==========================================
-   MAIN CONTENT AREA
-========================================== */
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 .main-content {
 
-    background-color: #ffffff;
+    background-color: white;
 
-    padding:
+    border-bottom: 2px solid #222;
 
-        20px
-        24px
-        40px;
+    padding: 18px 20px 40px 20px;
 
-    border-bottom: 2px solid #222222;
 }
 
-
-
-/* ==========================================
-   HERO
-
-   Positioned like the reference:
-   upper-left of main content
-========================================== */
-
-.hero-area {
-
-    width: 72%;
-
-    height: 170px;
-
-
-    margin:
-
-        0
-        0
-        25px
-        0;
-
-
-    border: 2px solid #222222;
-
-    background-color: #e2e2e2;
-
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-
-    font-size: 24px;
-
-    color: #444444;
-}
-
-
-
-/* ==========================================
-   MAIN TEXT
-========================================== */
 
 .main-content h1 {
 
@@ -442,7 +390,8 @@ body {
 
     font-weight: normal;
 
-    margin-bottom: 14px;
+    margin-bottom: 15px;
+
 }
 
 
@@ -453,125 +402,122 @@ body {
     line-height: 1.55;
 
     margin-bottom: 18px;
+
 }
 
 
+/* =========================================
+   HERO
+========================================= */
 
-/* ==========================================
-   RIGHT COLUMN
-========================================== */
+.hero-image {
 
-.right-content {
+    width: 88%;
 
-    background-color: #f3f3f3;
+    height: 160px;
 
-    border-left: 2px solid #222222;
+    border: 2px solid #222;
 
-    border-bottom: 2px solid #222222;
+    margin-bottom: 25px;
 
+    display: flex;
 
-    padding:
+    align-items: flex-start;
 
-        35px
-        20px;
+    padding: 8px;
+
+    background-color: white;
+
+    font-size: 20px;
+
 }
 
 
+/* =========================================
+   RIGHT SIDEBAR
+========================================= */
 
-/* ==========================================
-   STICKY CONTENT
-========================================== */
+.right-column {
 
-.sticky-box {
+    border-left: 2px solid #222;
+    border-bottom: 2px solid #222;
+
+    background-color: white;
+
+    padding: 35px 20px;
+
+}
+
+
+.sticky-content {
 
     position: sticky;
 
     top: 15px;
+
 }
 
 
-.sticky-box h3 {
-
-    font-size: 16px;
-
-    font-weight: normal;
-
-    margin-bottom: 10px;
-}
-
-
-.sticky-box h3:not(:first-child) {
-
-    margin-top: 30px;
-}
-
-
-.sticky-box ul {
-
-    margin-left: 18px;
-}
-
-
-.sticky-box li {
+.sticky-content strong {
 
     font-size: 14px;
 
-    margin-bottom: 8px;
+    font-weight: normal;
+
 }
 
 
+.sticky-content ul {
 
-/* ==========================================
+    margin-top: 8px;
+
+    padding-left: 18px;
+
+}
+
+
+.sticky-content li {
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================================
    FOOTER
+========================================= */
 
-   Full width exactly like reference
-========================================== */
+footer {
 
-.footer {
+    border-bottom: 2px solid #222;
 
-    min-height: 52px;
+    background-color: white;
 
+    min-height: 50px;
 
-    background-color: #f7f7f7;
-
-
-    border-bottom: 2px solid #222222;
-
-
-    padding:
-
-        10px
-        18px;
-
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
+    padding: 10px 18px;
 
     font-size: 12px;
 
-    line-height: 1.5;
 }
 
 
-
-/* ==========================================
+/* =========================================
    MOBILE
-========================================== */
+========================================= */
 
 @media screen and (max-width: 800px) {
 
-
-    .site-container {
+    .website {
 
         width: 94vw;
+
     }
 
 
-    .top-layout {
+    .header-grid {
 
         grid-template-columns: 1fr;
 
@@ -580,63 +526,73 @@ body {
         grid-template-areas:
 
             "logo"
-            "information"
+            "info"
             "primary"
             "secondary";
+
     }
 
 
     .logo-box {
 
-        min-height: 90px;
+        min-height: 80px;
 
         border-right: none;
+
     }
 
 
-    .header-information {
-
-        min-height: 70px;
-    }
-
-
-    #primary-navigation,
-    #secondary-navigation {
+    #primary-nav,
+    #secondary-nav {
 
         height: auto;
+
     }
 
 
-    .primary-navigation,
-    .secondary-navigation {
+    .top-primary-nav,
+    .top-secondary-nav {
 
         flex-wrap: wrap;
 
         min-height: 40px;
+
     }
 
 
-    .content-layout {
+    .top-primary-nav a,
+    .top-secondary-nav a {
+
+        min-height: 40px;
+
+    }
+
+
+    .body-grid {
 
         grid-template-columns: 1fr;
+
     }
 
 
-    .left-navigation {
+    .left-column {
 
         border-right: none;
+
     }
 
 
-    .right-content {
+    .right-column {
 
         border-left: none;
+
     }
 
 
-    .hero-area {
+    .hero-image {
 
         width: 100%;
+
     }
 
 }
