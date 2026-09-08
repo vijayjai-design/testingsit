@@ -1,19 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /*
-    ========================================
-    PRIMARY TOP NAVIGATION
-    ========================================
-    */
+    // ==============================
+    // TOP NAVIGATION BAR
+    // ==============================
 
-    const topNavigation =
-        document.getElementById("top-navigation");
+    const topNav = document.getElementById("top-navigation");
 
+    if (topNav) {
 
-    if (topNavigation) {
-
-        topNavigation.innerHTML = `
-
+        topNav.innerHTML = `
             <nav class="primary-navigation">
 
                 <a href="index.html">
@@ -33,39 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
 
             </nav>
-
-            <nav class="secondary-navigation">
-
-                <a href="hobbies.html">
-                    Hobbies
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
         `;
 
     }
 
 
+    // ==============================
+    // LEFT NAVIGATION
+    // ==============================
 
-    /*
-    ========================================
-    LEFT SIDE NAVIGATION
-    ========================================
-    */
+    const sideNav = document.getElementById("side-navigation");
 
-    const sideNavigation =
-        document.getElementById("side-navigation");
+    if (sideNav) {
 
-
-    if (sideNavigation) {
-
-        sideNavigation.innerHTML = `
-
+        sideNav.innerHTML = `
             <nav class="side-navigation">
 
                 <a href="index.html">
@@ -84,68 +60,35 @@ document.addEventListener("DOMContentLoaded", function () {
                     Experience
                 </a>
 
-                <a href="hobbies.html">
-                    Hobbies
-                </a>
-
             </nav>
-
         `;
 
     }
 
 
-
-    /*
-    ========================================
-    SHOW CURRENT PAGE
-    ========================================
-    */
+    // ==============================
+    // CURRENT PAGE HIGHLIGHT
+    // ==============================
 
     let currentPage =
         window.location.pathname.split("/").pop();
 
-
-    /*
-    GitHub Pages may return nothing
-    when index.html is opened.
-    */
-
-    if (
-        currentPage === "" ||
-        currentPage === "/"
-    ) {
-
+    if (currentPage === "") {
         currentPage = "index.html";
-
     }
 
 
-
-    /*
-    Find every navigation link
-    */
-
-    const navigationLinks =
-        document.querySelectorAll(
-            ".primary-navigation a, .side-navigation a"
-        );
+    const links = document.querySelectorAll(
+        ".primary-navigation a, .side-navigation a"
+    );
 
 
-    navigationLinks.forEach(function (link) {
+    links.forEach(function (link) {
 
-        const linkPage =
-            link.getAttribute("href");
-
-
-        /*
-        Highlight current page
-        */
+        const linkPage = link.getAttribute("href");
 
         if (linkPage === currentPage) {
-
             link.classList.add("active");
-
         }
 
     });
