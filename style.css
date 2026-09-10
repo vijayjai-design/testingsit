@@ -1,119 +1,567 @@
-/* ======================================
-   PRIMARY NAVIGATION BAR
-====================================== */
+/* ==========================================
+   RESET
+========================================== */
 
-#primary-navigation {
-    grid-area: primary;
-
-    width: 100%;
-    height: 30px;
-
-    border-bottom: 1px solid #222;
-
-    background-color: white;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
-.primary-nav {
-    width: 100%;
-    height: 100%;
+/* ==========================================
+   COLORS
+========================================== */
 
-    display: flex;
+:root {
 
-    justify-content: center;
-    align-items: center;
+    --nardo-grey: #6f7477;
+
+    --background-white: #ffffff;
+
+    --border: #000000;
+
+    --text: #000000;
+
 }
 
 
-.primary-nav a {
-    height: 100%;
+/* ==========================================
+   BODY
+
+   10% background on each side
+========================================== */
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    color: var(--text);
+
+    background: var(--nardo-grey);
+
+    padding:
+
+        2vh
+        10vw
+        10vh
+        10vw;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   MAIN WHITE SITE CONTAINER
+========================================== */
+
+.site-container {
+
+    background-color: var(--background-white);
+
+    border: 2px solid var(--border);
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+
+    display: flex;
+
+    border-bottom: 2px solid var(--border);
+
+}
+
+
+/* ==========================================
+   LEFT LOGO AREA
+
+   EXACTLY 30%
+========================================== */
+
+.logo-area {
+
+    width: 30%;
+
+    border-right:
+        2px solid var(--border);
+
+    padding:
+
+        25px
+        20px;
 
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    padding: 0 25px;
+}
 
-    color: black;
+
+.logo-area h1 {
+
+    font-size: 2.2rem;
+
+    font-weight: bold;
+
+}
+
+
+/* ==========================================
+   HEADER RIGHT
+
+   EXACTLY 70%
+========================================== */
+
+.header-right {
+
+    width: 70%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* ==========================================
+   INFORMATION ROW
+========================================== */
+
+.info-graphics {
+
+    padding:
+
+        12px
+        20px;
+
+    border-bottom:
+        2px solid var(--border);
+
+    min-height: 50px;
+
+    font-size: 0.95rem;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+/* ==========================================
+   PRIMARY + SECONDARY NAVIGATION BARS
+========================================== */
+
+.primary-nav-bar,
+.secondary-nav-bar {
+
+    border-bottom:
+        2px solid var(--border);
+
+    padding:
+
+        8px
+        15px;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 36px;
+
+}
+
+
+/* SECONDARY DOES NOT HAVE
+   A BORDER UNDER IT */
+
+.secondary-nav-bar {
+
+    border-bottom: none;
+
+}
+
+
+/* ==========================================
+   HORIZONTAL NAVIGATION LINKS
+========================================== */
+
+.nav-horizontal-list {
+
+    display: flex;
+
+    flex-direction: row;
+
+    list-style: none;
+
+    gap: 20px;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    width: 100%;
+
+}
+
+
+.nav-horizontal-list li a {
 
     text-decoration: none;
 
-    font-size: 13px;
+    color: var(--text);
 
-    border-left: 1px solid #ccc;
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
 }
 
 
-.primary-nav a:last-child {
-    border-right: 1px solid #ccc;
+/* THIS MAKES THEM OBVIOUSLY CLICKABLE */
+
+.nav-horizontal-list li a:hover {
+
+    text-decoration: underline;
+
+    font-weight: bold;
+
 }
 
 
-.primary-nav a:hover {
-    background-color: #707477;
-    color: white;
-}
+/* ==========================================
+   MAIN BODY
+========================================== */
 
-
-.primary-nav a.active {
-    background-color: #707477;
-    color: white;
-}
-
-
-/* ======================================
-   SECONDARY NAVIGATION BAR
-====================================== */
-
-#secondary-navigation {
-    grid-area: secondary;
-
-    width: 100%;
-    height: 30px;
-
-    border-bottom: 2px solid #222;
-
-    background-color: white;
-}
-
-
-.secondary-nav {
-    width: 100%;
-    height: 100%;
+.main-body {
 
     display: flex;
 
-    justify-content: center;
-    align-items: center;
+    border-bottom:
+        2px solid var(--border);
+
+    flex: 1;
+
 }
 
 
-.secondary-nav a {
-    height: 100%;
+/* ==========================================
+   LEFT SIDEBAR
+   EXACTLY 25%
+========================================== */
 
-    display: flex;
+.sidebar-left {
 
-    align-items: center;
-    justify-content: center;
+    width: 25%;
 
-    padding: 0 25px;
+    border-right:
+        2px solid var(--border);
 
-    color: black;
+    padding: 20px;
+
+}
+
+
+/* ==========================================
+   LEFT NAVIGATION GROUPS
+========================================== */
+
+.side-nav-group {
+
+    margin-bottom: 25px;
+
+}
+
+
+.side-nav-group h4 {
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.side-nav-group ul {
+
+    list-style: none;
+
+}
+
+
+.side-nav-group li {
+
+    margin-bottom: 8px;
+
+}
+
+
+.side-nav-group a {
 
     text-decoration: none;
 
-    font-size: 12px;
+    color: var(--text);
+
+    font-size: 0.95rem;
+
 }
 
 
-.secondary-nav a:hover {
-    background-color: #707477;
-    color: white;
+.side-nav-group a:hover {
+
+    text-decoration: underline;
+
+    font-weight: bold;
+
 }
 
 
-.secondary-nav a.active {
-    background-color: #707477;
-    color: white;
+/* ==========================================
+   CENTER CONTENT
+   EXACTLY 50%
+========================================== */
+
+.content-center {
+
+    width: 50%;
+
+    border-right:
+        2px solid var(--border);
+
+    padding: 20px;
+
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero-image {
+
+    border:
+        2px solid var(--border);
+
+    padding:
+
+        25px
+        20px;
+
+    margin-bottom: 25px;
+
+    width: 90%;
+
+    min-height: 150px;
+
+}
+
+
+.hero-image h2 {
+
+    font-weight: normal;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* ==========================================
+   MAIN TEXT
+========================================== */
+
+.main-text h2 {
+
+    font-size: 1.4rem;
+
+    margin-bottom: 15px;
+
+}
+
+
+.bio-section {
+
+    margin-bottom: 18px;
+
+}
+
+
+.bio-section h3 {
+
+    font-size: 1.1rem;
+
+    margin-bottom: 6px;
+
+    text-decoration: underline;
+
+}
+
+
+.bio-section p {
+
+    line-height: 1.5;
+
+    font-size: 0.93rem;
+
+}
+
+
+/* ==========================================
+   RIGHT SIDEBAR
+   EXACTLY 25%
+========================================== */
+
+.sidebar-right {
+
+    width: 25%;
+
+    padding: 20px;
+
+}
+
+
+/* ==========================================
+   STICKY CONTENT
+========================================== */
+
+.sticky-box {
+
+    position: sticky;
+
+    top: 20px;
+
+}
+
+
+.sticky-box p {
+
+    margin-bottom: 10px;
+
+    font-size: 0.95rem;
+
+}
+
+
+.sticky-box ul {
+
+    padding-left: 20px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+
+    padding:
+
+        15px
+        20px;
+
+    font-size: 0.85rem;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 800px) {
+
+    body {
+
+        padding:
+
+            10px
+            15px
+            40px;
+
+    }
+
+
+    .header {
+
+        flex-direction: column;
+
+    }
+
+
+    .logo-area,
+    .header-right {
+
+        width: 100%;
+
+    }
+
+
+    .logo-area {
+
+        border-right: none;
+
+        border-bottom:
+            2px solid var(--border);
+
+    }
+
+
+    .nav-horizontal-list {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .main-body {
+
+        flex-direction: column;
+
+    }
+
+
+    .sidebar-left,
+    .content-center,
+    .sidebar-right {
+
+        width: 100%;
+
+        border-right: none;
+
+    }
+
+
+    .sidebar-left,
+    .content-center {
+
+        border-bottom:
+            2px solid var(--border);
+
+    }
+
+
+    .hero-image {
+
+        width: 100%;
+
+    }
+
 }
