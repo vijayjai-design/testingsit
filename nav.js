@@ -27,8 +27,8 @@ const navItems = {
         },
 
         {
-            label: "Hobbies",
-            url: "hobbies.html"
+            label: "Product",
+            url: "product.html"
         }
 
     ],
