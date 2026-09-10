@@ -15,13 +15,23 @@
 
 :root {
 
-    --nardo-grey: #6f7477;
+    --primary-dark: #1a3a52;
 
-    --background-white: #ffffff;
+    --primary-light: #2d5a7b;
 
-    --border: #000000;
+    --accent-color: #d4955e;
 
-    --text: #000000;
+    --background-white: #f9fafb;
+
+    --border-light: #e5e7eb;
+
+    --text-dark: #1f2937;
+
+    --text-light: #6b7280;
+
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
 
 }
 
@@ -34,11 +44,11 @@
 
 body {
 
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-    color: var(--text);
+    color: var(--text-dark);
 
-    background: var(--nardo-grey);
+    background: linear-gradient(135deg, #0f1419 0%, #1a2633 100%);
 
     padding:
 
@@ -60,13 +70,19 @@ body {
 
     background-color: var(--background-white);
 
-    border: 2px solid var(--border);
+    border: 1px solid var(--border-light);
 
     display: flex;
 
     flex-direction: column;
 
     width: 100%;
+
+    box-shadow: var(--shadow-lg);
+
+    border-radius: 8px;
+
+    overflow: hidden;
 
 }
 
@@ -79,7 +95,11 @@ body {
 
     display: flex;
 
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border-light);
+
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+
+    color: white;
 
 }
 
@@ -95,7 +115,7 @@ body {
     width: 30%;
 
     border-right:
-        2px solid var(--border);
+        1px solid rgba(255, 255, 255, 0.2);
 
     padding:
 
@@ -113,7 +133,11 @@ body {
 
     font-size: 2.2rem;
 
-    font-weight: bold;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    color: white;
 
 }
 
@@ -147,7 +171,7 @@ body {
         20px;
 
     border-bottom:
-        2px solid var(--border);
+        1px solid rgba(255, 255, 255, 0.2);
 
     min-height: 50px;
 
@@ -156,6 +180,10 @@ body {
     display: flex;
 
     align-items: center;
+
+    color: rgba(255, 255, 255, 0.95);
+
+    font-weight: 500;
 
 }
 
@@ -168,7 +196,7 @@ body {
 .secondary-nav-bar {
 
     border-bottom:
-        2px solid var(--border);
+        1px solid rgba(255, 255, 255, 0.2);
 
     padding:
 
@@ -221,11 +249,15 @@ body {
 
     text-decoration: none;
 
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.95);
 
     font-size: 0.95rem;
 
     font-weight: 500;
+
+    transition: all 0.2s ease;
+
+    position: relative;
 
 }
 
@@ -234,9 +266,9 @@ body {
 
 .nav-horizontal-list li a:hover {
 
-    text-decoration: underline;
+    color: var(--accent-color);
 
-    font-weight: bold;
+    font-weight: 600;
 
 }
 
@@ -250,7 +282,7 @@ body {
     display: flex;
 
     border-bottom:
-        2px solid var(--border);
+        1px solid var(--border-light);
 
     flex: 1;
 
@@ -267,9 +299,11 @@ body {
     width: 25%;
 
     border-right:
-        2px solid var(--border);
+        1px solid var(--border-light);
 
     padding: 20px;
+
+    background-color: #fafbfc;
 
 }
 
@@ -289,9 +323,17 @@ body {
 
     font-size: 1rem;
 
-    font-weight: bold;
+    font-weight: 700;
 
     margin-bottom: 10px;
+
+    color: var(--primary-dark);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    font-size: 0.85rem;
 
 }
 
@@ -314,18 +356,30 @@ body {
 
     text-decoration: none;
 
-    color: var(--text);
+    color: var(--text-dark);
 
     font-size: 0.95rem;
+
+    transition: all 0.2s ease;
+
+    display: block;
+
+    padding: 4px 8px;
+
+    border-radius: 4px;
 
 }
 
 
 .side-nav-group a:hover {
 
-    text-decoration: underline;
+    color: var(--primary-dark);
 
-    font-weight: bold;
+    background-color: rgba(45, 90, 123, 0.1);
+
+    padding-left: 12px;
+
+    font-weight: 600;
 
 }
 
@@ -340,9 +394,11 @@ body {
     width: 50%;
 
     border-right:
-        2px solid var(--border);
+        1px solid var(--border-light);
 
     padding: 20px;
+
+    background-color: white;
 
 }
 
@@ -354,7 +410,7 @@ body {
 .hero-image {
 
     border:
-        2px solid var(--border);
+        1px solid var(--border-light);
 
     padding:
 
@@ -367,14 +423,22 @@ body {
 
     min-height: 150px;
 
+    background: linear-gradient(135deg, rgba(45, 90, 123, 0.05) 0%, rgba(212, 149, 94, 0.05) 100%);
+
+    border-radius: 6px;
+
+    box-shadow: var(--shadow);
+
 }
 
 
 .hero-image h2 {
 
-    font-weight: normal;
+    font-weight: 600;
 
     font-size: 1.2rem;
+
+    color: var(--primary-dark);
 
 }
 
@@ -388,6 +452,10 @@ body {
     font-size: 1.4rem;
 
     margin-bottom: 15px;
+
+    color: var(--primary-dark);
+
+    font-weight: 700;
 
 }
 
@@ -403,18 +471,26 @@ body {
 
     font-size: 1.1rem;
 
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 
-    text-decoration: underline;
+    color: var(--primary-dark);
+
+    font-weight: 700;
+
+    border-bottom: 2px solid var(--accent-color);
+
+    padding-bottom: 4px;
 
 }
 
 
 .bio-section p {
 
-    line-height: 1.5;
+    line-height: 1.6;
 
     font-size: 0.93rem;
+
+    color: var(--text-light);
 
 }
 
@@ -430,6 +506,8 @@ body {
 
     padding: 20px;
 
+    background-color: #fafbfc;
+
 }
 
 
@@ -443,6 +521,16 @@ body {
 
     top: 20px;
 
+    background-color: white;
+
+    padding: 16px;
+
+    border-radius: 6px;
+
+    border: 1px solid var(--border-light);
+
+    box-shadow: var(--shadow);
+
 }
 
 
@@ -451,6 +539,10 @@ body {
     margin-bottom: 10px;
 
     font-size: 0.95rem;
+
+    font-weight: 700;
+
+    color: var(--primary-dark);
 
 }
 
@@ -462,6 +554,15 @@ body {
     font-size: 0.9rem;
 
     line-height: 1.6;
+
+    color: var(--text-light);
+
+}
+
+
+.sticky-box li {
+
+    margin-bottom: 6px;
 
 }
 
@@ -478,6 +579,12 @@ body {
         20px;
 
     font-size: 0.85rem;
+
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+
+    color: rgba(255, 255, 255, 0.9);
+
+    text-align: center;
 
 }
 
@@ -519,7 +626,7 @@ body {
         border-right: none;
 
         border-bottom:
-            2px solid var(--border);
+            1px solid rgba(255, 255, 255, 0.2);
 
     }
 
@@ -553,7 +660,7 @@ body {
     .content-center {
 
         border-bottom:
-            2px solid var(--border);
+            1px solid var(--border-light);
 
     }
 
